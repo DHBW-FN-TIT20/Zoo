@@ -1,0 +1,15 @@
+services:
+  next-app:
+    build:
+      context: ./next-app
+    ports:
+      - 3000:3000
+  db:
+    image: 'postgres:alpine'
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_DB: zoodb
+      POSTGRES_PASSWORD: root
+    ports:
+      - 5432:5432
