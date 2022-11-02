@@ -1,9 +1,11 @@
 services:
   next-app:
     build:
-      context: ./next-app
+      context: .
     ports:
       - 3000:3000
+    depends_on:
+      - db
   db:
     image: 'postgres:alpine'
     restart: always
