@@ -1,13 +1,7 @@
 services:
-  next-app:
-    build:
-      context: .
-    ports:
-      - 3000:3000
-    depends_on:
-      - db
   db:
     image: 'postgres:alpine'
+    container_name: postgres
     restart: always
     environment:
       POSTGRES_USER: root
@@ -15,3 +9,11 @@ services:
       POSTGRES_PASSWORD: root
     ports:
       - 5432:5432
+  next-app:
+    container_name: web
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
