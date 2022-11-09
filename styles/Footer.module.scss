@@ -1,0 +1,10 @@
+@import '../scss/var';
+
+.footer {
+    padding: 20px 0;
+    background-color: $dark;
+    color: $light;
+    .list {
+        list-style: none;
+    }
+}
