@@ -5,8 +5,7 @@ const Footer = () => {
     return <div className={`${styles.footer}`}>
         <div className={`container`}>
                     <p>
-                        Zoo Erlebniswelt <br />
-                        Friedrichshafen
+                    <Link href="/" className="link-danger text-decoration-none">Zoo Erlebniswelt <br /> Friedrichshafen</Link>   
                     </p>
                
         </div>
