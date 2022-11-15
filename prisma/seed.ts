@@ -261,7 +261,7 @@ async function main() {
         create: {
           abbr: 'panda',
           name: 'Panda',
-          age:  2,
+          age:  6,
           genre: {
             create: {
                 title: 'Ailuropodinae',

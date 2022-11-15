@@ -47,8 +47,9 @@ const Animal = (props) => {
           <div className={styles.textDivider}/>
           <ul>
             <li>Keeper: {props.keeper.name}</li>
-            <li>Genre: {props.genre.title}</li>
+            <li>Species: {props.genre.title}</li>
             <li>Origin: {props.origin.title}</li>
+            <li>Age: {props.age}</li>
           </ul>
         </div>
       </div>
