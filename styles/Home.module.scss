@@ -66,6 +66,36 @@
     }
 }
 
+.thirdElement {
+    padding: 1rem 0;
+    color: black;
+    h1 {
+        text-align: right;
+    }
+    .smallDivider {
+        width: 10%;
+        height: 3px;
+        border-radius: 20px;
+        background-color: $primary;
+        float: right;
+    }
+    ul {
+        padding: 2rem 0;
+        list-style: none;
+        margin: 0;
+        a {
+            text-decoration: none;
+            li {
+                margin: 1rem 0;
+                transition: box-shadow .2s;
+                &:hover {
+                    box-shadow: $box-shadow !important;
+                }
+            }
+        }
+    }
+}
+
 .logo {
     padding: 10px;
     img {

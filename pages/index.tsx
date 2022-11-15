@@ -3,8 +3,20 @@ import styles from '../styles/Home.module.scss'
 import logo from "../public/Logo.png"
 import tigerImage from "../public/IMG_5884 1.png";
 import { Fragment } from "react";
+import { GetServerSideProps } from "next";
+import prisma from "../lib/prisma";
+import Link from "next/link";
 
-export default function Home() {
+export const getServerSideProps: GetServerSideProps = async () => {
+  const animals = await prisma.animal.findMany();
+  return {
+    props: {
+      animals: animals
+    },
+  };
+};
+
+const Home = (props) => {
   return (
     <Fragment>
       <div className={`${styles.firstElement}`}>
@@ -61,6 +73,25 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className={`${styles.thirdElement}`}>
+        <div className="container">
+          <h1>Tiere</h1>
+          <div className={styles.smallDivider} />
+          <ul>
+            {props.animals.map(animal => {
+              return (
+              <Link href={`animal/${animal.abbr}`} className={`link-dark`} key={animal.abbr}>
+                <li className="shadow-sm p-3 rounded-1">
+                {animal.name}
+                </li>
+              </Link>)
+            })}
+          </ul>
+        </div>
+      </div>
     </Fragment>
   )
 }
+
+export default Home;
