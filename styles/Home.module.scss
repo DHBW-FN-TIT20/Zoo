@@ -89,7 +89,7 @@
                 margin: 1rem 0;
                 transition: box-shadow .2s;
                 &:hover {
-                    box-shadow: $box-shadow !important;
+                    box-shadow: $box-shadow-lg !important;
                 }
             }
         }

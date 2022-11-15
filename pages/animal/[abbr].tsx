@@ -33,7 +33,7 @@ const Animal = (props) => {
     <Fragment>
       <div className={`${styles.firstElement}`}>
         <div className={`container`}>
-          <div className={`col-12 col-md-6 d-flex flex-column justify-content-center ${styles.heading}`}>
+          <div className={`${styles.heading}`}>
             <h2>{props.name}</h2>
             <div className={styles.textDivider}/>
           </div>

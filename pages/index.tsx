@@ -82,7 +82,7 @@ const Home = (props) => {
             {props.animals.map(animal => {
               return (
               <Link href={`animal/${animal.abbr}`} className={`link-dark`} key={animal.abbr}>
-                <li className="shadow-sm p-3 rounded-1">
+                <li className="shadow p-3 rounded-1">
                 {animal.name}
                 </li>
               </Link>)
