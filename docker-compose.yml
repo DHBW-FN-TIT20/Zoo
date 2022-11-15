@@ -9,6 +9,11 @@ services:
       POSTGRES_PASSWORD: root
     ports:
       - 5432:5432
+  check-db-started: 
+    image: jwilder/dockerize:0.6.1
+    depends_on:
+      - db
+    command: 'dockerize -wait=tcp://postgres:5432'
   next-app:
     container_name: web
     build:
@@ -16,4 +21,4 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - db
+      - check-db-started

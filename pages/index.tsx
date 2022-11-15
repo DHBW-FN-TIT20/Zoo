@@ -16,7 +16,25 @@ export const getServerSideProps: GetServerSideProps = async () => {
   };
 };
 
+function renderOpeningsFromDay(day) {
+  switch(day) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      return '9:00 - 18:00 Uhr';
+    case 5:
+    case 6:
+      return '9:00 - 20:00 Uhr';
+    case 7:
+      return '9:00 - 17:00 Uhr';
+  }
+}
+
+
 const Home = (props) => {
+  let date = new Date();
+
   return (
     <Fragment>
       <div className={`${styles.firstElement}`}>
@@ -37,7 +55,7 @@ const Home = (props) => {
                 <h1>Tiere der Welt</h1>
                 <p>Erlebe die Gehemisse der Wildnis</p>
                 <div className={styles.textDivider}/>
-                <button type="button" className={`btn btn-primary`}>Visit</button>
+                <a href="#animals" type="button" className={`btn btn-primary`}>Los!</a>
               </div>
             </div>
           </div>
@@ -51,22 +69,22 @@ const Home = (props) => {
           <div className={styles.smallDivider}/>
           <div className={`${styles.openingTimes} mx-auto`}>
             <div className={styles.todayTimes}>
-              <small>Heute, 22.Oktober</small>
-              <h3>9:00 - 18:00 Uhr</h3>
+              <small>Heute, {date.toLocaleDateString("de-DE", {day:'numeric', month:'long'})}</small>
+              <h3>{renderOpeningsFromDay(date.getDay())}</h3>
             </div>
             <table className={styles.restTimes}>
               <tbody>
                 <tr>
                   <td>Montag - Donnerstag</td>
-                  <td>9:00 - 18:00 Uhr</td>
+                  <td>{renderOpeningsFromDay(1)}</td>
                 </tr>
                 <tr>
                   <td>Freitag - Samstag</td>
-                  <td>9:00 - 20:00 Uhr</td>
+                  <td>{renderOpeningsFromDay(5)}</td>
                 </tr>
                 <tr>
                   <td>Sonntag</td>
-                  <td>9:00 - 17:00 Uhr</td>
+                  <td>{renderOpeningsFromDay(7)}</td>
                 </tr>
               </tbody>
             </table>
@@ -76,7 +94,7 @@ const Home = (props) => {
 
       <div className={`${styles.thirdElement}`}>
         <div className="container">
-          <h1>Tiere</h1>
+          <h1 id="animals">Tiere</h1>
           <div className={styles.smallDivider} />
           <ul>
             {props.animals.map(animal => {
