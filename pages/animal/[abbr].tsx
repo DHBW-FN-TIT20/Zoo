@@ -33,25 +33,24 @@ const Animal = (props) => {
     <Fragment>
       <div className={`${styles.firstElement}`}>
         <div className={`container`}>
-          <div className={`row`}>
-            <div className={`col-12 col-md-6 d-flex flex-column justify-content-center ${styles.heading}`}>
-              <h2>{props.name}</h2>
-              <div className={styles.textDivider}/>
-            </div>
-            <div className={`col-6 d-none d-md-block`}>
-              <Image src={wolfImg} alt="(Wolf-image)" className={`img-fluid ${styles.img}`} />
-            </div>
+          <div className={`col-12 col-md-6 d-flex flex-column justify-content-center ${styles.heading}`}>
+            <h2>{props.name}</h2>
+            <div className={styles.textDivider}/>
           </div>
         </div>
         <div className={styles.divider}/>
       </div>
 
-      <div>
-        <ul>
-          <li>Keeper: {props.keeper.name}</li>
-          <li>Genre: {props.genre.title}</li>
-          <li>Origin: {props.origin.title}</li>
-        </ul>
+      <div className={`${styles.secondElement}`}>
+        <div className={`container`}>
+          <h1>Fakten</h1>
+          <div className={styles.textDivider}/>
+          <ul>
+            <li>Keeper: {props.keeper.name}</li>
+            <li>Genre: {props.genre.title}</li>
+            <li>Origin: {props.origin.title}</li>
+          </ul>
+        </div>
       </div>
     </Fragment>
   )

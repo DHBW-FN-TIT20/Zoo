@@ -20,15 +20,31 @@
     background-color: $primary;
     margin: 5px 0;
   }
-
-  .img{
-    padding: 0 10px;
-    margin-top: 3rem;
-  }
-
 }
 
 .divider {
   height: 15px;
   background-color: $danger;
+}
+
+.secondElement{
+  margin: 3rem 0 3rem 0;
+
+  ul{
+    font-size: 1.5rem;
+  }
+
+  li{
+    margin: 1rem;
+  }
+
+  .textDivider {
+    width: 10%;
+    height: 3px;
+    border-radius: 20px;
+    background-color: $danger;
+    margin: 5px 0;
+  }
+
+
 }
