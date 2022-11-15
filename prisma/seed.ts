@@ -195,6 +195,90 @@ async function main() {
           }
         },
       })
+
+      const christoph = await prisma.animal.upsert({
+
+        where: { abbr: 'christoph' },
+    
+        update: {},
+    
+        create: {
+          abbr: 'christoph',
+          name: 'Christoph',
+          age:  22,
+          genre: {
+            create: {
+                title: 'Human',
+            }
+          },
+          origin: {
+            create: {
+                title: 'Ulm'
+            }
+          },
+          keeper: {
+            create: {
+                name: 'Koßlowski'
+            }
+          }
+        },
+      })
+
+      const erdmaennchen = await prisma.animal.upsert({
+
+        where: { abbr: 'erdmaennchen' },
+    
+        update: {},
+    
+        create: {
+          abbr: 'erdmaennchen',
+          name: 'Erdmaennchen',
+          age:  2,
+          genre: {
+            create: {
+                title: 'Suricata',
+            }
+          },
+          origin: {
+            create: {
+                title: 'Botswana'
+            }
+          },
+          keeper: {
+            create: {
+                name: 'Ulrike'
+            }
+          }
+        },
+      })
+
+      const panda = await prisma.animal.upsert({
+
+        where: { abbr: 'panda' },
+    
+        update: {},
+    
+        create: {
+          abbr: 'panda',
+          name: 'Panda',
+          age:  2,
+          genre: {
+            create: {
+                title: 'Ailuropodinae',
+            }
+          },
+          origin: {
+            create: {
+                title: 'China'
+            }
+          },
+          keeper: {
+            create: {
+                name: 'Mike'
+            }
+          }
+        },
+      })
 }
 
 main()
