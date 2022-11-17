@@ -9,3 +9,40 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// data model
+model Keeper {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  animals Animal[]
+}
+
+model Animal {
+  id   Int    @id @default(autoincrement())
+  abbr String @unique
+  name String
+  age  Int
+
+  genre    Genre?  @relation(fields: [genreId], references: [id])
+  genreId  Int?
+  origin   Origin? @relation(fields: [originId], references: [id])
+  originId Int?
+  keeper   Keeper? @relation(fields: [keeperId], references: [id])
+  keeperId Int?
+}
+
+// animal properties
+model Genre {
+  id    Int    @id @default(autoincrement())
+  title String @unique
+
+  animals Animal[]
+}
+
+model Origin {
+  id    Int    @id @default(autoincrement())
+  title String @unique
+
+  animals Animal[]
+}

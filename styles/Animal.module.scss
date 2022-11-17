@@ -1,0 +1,50 @@
+@import '../scss/var';
+
+.firstElement{
+  background: $secondary;
+  color: white;
+
+  .heading {
+    padding: 1rem 0rem;
+  }
+  
+  h2 {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+
+  .textDivider {
+    width: 30%;
+    height: 3px;
+    border-radius: 20px;
+    background-color: $primary;
+    margin: 5px 0;
+  }
+}
+
+.divider {
+  height: 15px;
+  background-color: $danger;
+}
+
+.secondElement{
+  margin: 3rem 0 3rem 0;
+
+  ul{
+    font-size: 1.5rem;
+  }
+
+  li{
+    margin: 1rem;
+  }
+
+  .textDivider {
+    width: 15%;
+    height: 3px;
+    border-radius: 20px;
+    background-color: $danger;
+    margin: 5px 0;
+  }
+
+
+}

@@ -1,0 +1,118 @@
+@import '../scss/var';
+
+.firstElement{
+    background: $secondary;
+    color: white;
+    h1 {
+        font-size: 4rem;
+        font-weight: 530
+    }
+    .heading {
+        padding: 50px 30px;
+    }
+    .textDivider {
+        width: 40%;
+        height: 3px;
+        border-radius: 20px;
+        background-color: $danger;
+        margin: 20px 0;
+    }
+    .img {
+        padding: 0 10px;
+    }
+}
+
+.secondElement {
+    margin: 3rem 0 9rem 0;
+    .smallDivider {
+        width: 10%;
+        height: 3px;
+        border-radius: 20px;
+        background-color: $primary;
+    }
+    .openingTimes {
+        max-width: 800px;
+        margin-top: 5rem;
+        .todayTimes {
+            border-radius: 10px;
+            background-color: $secondary;
+            color: $light;
+            padding: 1.5rem;
+            h3 {
+                text-align: center;
+            }
+        }
+        .restTimes {
+            position: relative;
+            margin-top: 40px;
+            width: 100%;
+            table-layout: fixed;
+            text-align: center;
+            td {
+                padding: 5px;
+            }
+            &:before {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                content: ' ';
+                background-color: $danger;
+                width: 3px;
+                border-radius: 20px;
+                height: 110%;
+            }
+        }
+    }
+}
+
+.thirdElement {
+    padding: 1rem 0;
+    color: black;
+    h1 {
+        text-align: right;
+    }
+    .smallDivider {
+        width: 10%;
+        height: 3px;
+        border-radius: 20px;
+        background-color: $primary;
+        float: right;
+    }
+    ul {
+        padding: 2rem 0;
+        list-style: none;
+        margin: 0;
+        a {
+            text-decoration: none;
+            li {
+                margin: 1rem 0;
+                transition: box-shadow .2s;
+                &:hover {
+                    box-shadow: $box-shadow-lg !important;
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    padding: 10px;
+    img {
+        margin: 10px;
+    }
+    div {
+        padding: 4px;
+        h4 {
+            margin: 0;
+        }
+        small {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.divider {
+    height: 15px;
+    background-color: $danger;
+}

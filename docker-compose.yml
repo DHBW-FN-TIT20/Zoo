@@ -1,11 +1,7 @@
 services:
-  next-app:
-    build:
-      context: ./next-app
-    ports:
-      - 3000:3000
   db:
     image: 'postgres:alpine'
+    container_name: postgres
     restart: always
     environment:
       POSTGRES_USER: root
@@ -13,3 +9,16 @@ services:
       POSTGRES_PASSWORD: root
     ports:
       - 5432:5432
+  check-db-started: 
+    image: jwilder/dockerize:0.6.1
+    depends_on:
+      - db
+    command: 'dockerize -wait=tcp://postgres:5432'
+  next-app:
+    container_name: web
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - check-db-started
