@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="./public/Logo.png" alt="Bootstrap logo" width="50" alt="">
+</p>
+
 # Zoo Web-Application
 
 This website represents a fictional zoo. On the site you can learn about different animals.
