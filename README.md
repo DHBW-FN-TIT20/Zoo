@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./public/Logo.png" alt="Bootstrap logo" width="50" alt="">
+    <img src="./public/Logo.png" width="50" alt="Logo">
 </p>
 
 # Zoo Web-Application
